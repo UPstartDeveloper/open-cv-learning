@@ -1,10 +1,10 @@
 import cv2
+import numpy as np
 
 
 if __name__ == '__main__':
-    print("Package imported")
-
     """
+    print("Package imported")
     # reading in an image file
     img = cv2.imread('static/mugshot.png')
     # showing an image
@@ -13,6 +13,7 @@ if __name__ == '__main__':
     cv2.waitKey(7000)
     """
 
+    """
     # reading in a video file
     cap = cv2.VideoCapture('static/forest.mov')
     # display the video
@@ -20,6 +21,24 @@ if __name__ == '__main__':
         # read in one image frame from thr video at a time
         sucess, img = cap.read()
         cv2.imshow("Video", img)
-        # event-driven loop exit
+        # event-driven loop early exit
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    """
+
+    # use the webcam for video
+    cam = cv2.VideoCapture(0)
+    # set the dimensions of the video to take
+    cam.set(3, 640)  # 3 is for the width
+    cam.set(4, 480)  # 4 is for the height
+    # brightness settings
+    cam.set(10, 100)
+
+    # display the video from the camera - same as before
+    while True:
+        # read in one image frame from thr video at a time
+        sucess, img = cam.read()
+        cv2.imshow("Video", img)
+        # event-driven loop early exit
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
