@@ -31,8 +31,7 @@ if __name__ == '__main__':
     # set the dimensions of the video to take
     cam.set(3, 640)  # 3 is for the width
     cam.set(4, 480)  # 4 is for the height
-    # brightness settings
-    cam.set(10, 100)
+    cam.set(10, 100)  # 10 is for brightness settings
 
     # display the video from the camera - same as before
     while True:
