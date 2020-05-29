@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from chapter_6 import stack_images
 
 # Color Detection
 
@@ -45,9 +46,9 @@ if __name__ == '__main__':
         mask = cv2.inRange(img_HSV, lower, upper)
         # highltight the newly detected colors in the oriignal image!
         img_result = cv2.bitwise_and(img, img, mask=mask)
-        # Showing images
-        # cv2.imshow("Image", img)
-        # cv2.imshow("HSV Image", img_HSV)
-        # cv2.imshow("Mask", mask)
-        cv2.imshow("Colors Found", img_result)
+        # Showing images altogether
+        img_stack = stack_images(0.6, (
+            [img, img_HSV], [mask, img_result]
+        ))
+        cv2.imshow("Image Color Analysis", img_stack)
         cv2.waitKey(10000)
