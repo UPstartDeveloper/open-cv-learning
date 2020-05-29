@@ -1,4 +1,5 @@
 import cv2
+import numpy as np
 
 # Color Detection
 
@@ -33,9 +34,17 @@ if __name__ == '__main__':
         sat_max = cv2.getTrackbarPos("Sat Max", "TrackBars")
         val_min = cv2.getTrackbarPos("Value Min", "TrackBars")
         val_max = cv2.getTrackbarPos("Value Max", "TrackBars")
+        # capture these values in the terminal - the colors you want should
+        # be white!
         print(hue_min, hue_max, sat_min, sat_max, val_min, val_max)
-
+        # create a 'mask' to adjust these values in the image
+        lower, upper = (
+            np.array([hue_min, sat_min, val_min]),
+            np.array([hue_max, sat_max, val_max])
+        )
+        mask = cv2.inRange(img_HSV, lower, upper)
         # Showing images
         cv2.imshow("Image", img)
-        cv2.imshow("HSV Image", img_HSV)
+        # cv2.imshow("HSV Image", img_HSV)
+        cv2.imshow("Mask", mask)
         cv2.waitKey(10000)
