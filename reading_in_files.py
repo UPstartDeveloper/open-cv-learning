@@ -1,5 +1,6 @@
 import cv2
 
+# Chapter 1 - Reading in Images, Videos, and WebCam
 
 if __name__ == '__main__':
     """

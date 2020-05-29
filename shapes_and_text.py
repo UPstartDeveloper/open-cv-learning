@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-# How to Draw Shapes and Text on Images
+# Chapter 4 - How to Draw Shapes and Text on Images
 
 if __name__ == '__main__':
     # define an "image" only a matrix

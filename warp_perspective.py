@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-# Warp Perspective
+# Chapter 5 - Warp Perspective
 
 if __name__ == '__main__':
     img = cv2.imread("static/mugshot.png")

@@ -1,6 +1,6 @@
 import cv2
 
-# Resizing and Cropping Images
+# Chapter 3 - Resizing and Cropping Images
 
 if __name__ == '__main__':
     # read in image

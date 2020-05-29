@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-'''Basic Function Everyone Should Know'''
+# Chapter 2 - Basic Function Everyone Should Know
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from chapter_6 import stack_images
 
-# Color Detection
+# Chapter 7 - Color Detection
 
 if __name__ == '__main__':
     # creating 'trackbars' to see the optimal values for the color detection
