@@ -14,15 +14,15 @@ if __name__ == '__main__':
     - the value
     of the color we are tracking
     '''
-    cv2.createTrackbar("Hue Min", "TrackBars", 0, 179, lambda x: x)
+    cv2.createTrackbar("Hue Min", "TrackBars", 44, 179, lambda x: x)
     cv2.createTrackbar("Hue Max", "TrackBars", 179, 179, lambda x: x)
-    cv2.createTrackbar("Sat Min", "TrackBars", 0, 255, lambda x: x)
+    cv2.createTrackbar("Sat Min", "TrackBars", 78, 255, lambda x: x)
     cv2.createTrackbar("Sat Max", "TrackBars", 255, 255, lambda x: x)
-    cv2.createTrackbar("Value Min", "TrackBars", 0, 255, lambda x: x)
+    cv2.createTrackbar("Value Min", "TrackBars", 58, 255, lambda x: x)
     cv2.createTrackbar("Value Max", "TrackBars", 255, 255, lambda x: x)
 
     # figure out the values for the color being detected
-    while True:
+    while True:  # you will need to MANUALLY exit out of this loop!
         # Read in the Image
         img = cv2.imread('static/mugshot.png')
         # convert the image to HSV space
@@ -43,8 +43,11 @@ if __name__ == '__main__':
             np.array([hue_max, sat_max, val_max])
         )
         mask = cv2.inRange(img_HSV, lower, upper)
+        # highltight the newly detected colors in the oriignal image!
+        img_result = cv2.bitwise_and(img, img, mask=mask)
         # Showing images
-        cv2.imshow("Image", img)
+        # cv2.imshow("Image", img)
         # cv2.imshow("HSV Image", img_HSV)
-        cv2.imshow("Mask", mask)
+        # cv2.imshow("Mask", mask)
+        cv2.imshow("Colors Found", img_result)
         cv2.waitKey(10000)
