@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from chapter_6 import stack_images
+from joining_images import stack_images
 
 # Chapter 7 - Color Detection
 

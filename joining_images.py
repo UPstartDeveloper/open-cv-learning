@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-# Joining images
+# Chapter 6 - Joining images
 # useful for when you are working with LOTS of images
 
 '''
